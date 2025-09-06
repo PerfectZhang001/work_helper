@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Work Helper (加油打工人工具平台)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是一个为打工人提供各种实用工具的平台，包括JSON格式化、时间管理、效率提升等工具，帮助提高工作效率和生活质量。
 
-## Available Scripts
+## 项目介绍
 
-In the project directory, you can run:
+本项目已经从 Create React App 迁移至 Next.js，以提供更好的 SEO 支持和服务器端渲染能力。
 
-### `npm start`
+### 主要特性
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **SEO 优化**：
+   - 使用 next-seo 进行页面 SEO 优化
+   - 支持 Open Graph 和 Twitter Cards
+   - 每个页面都有独立的 meta 信息
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **现代化技术栈**：
+   - Next.js 14 作为主要框架
+   - React 18
+   - Font Awesome 图标库
+   - 响应式设计
 
-### `npm test`
+3. **工具集合**：
+   - JSON 格式化工具（美化、压缩、校验）
+   - 倒计时工具（下班时间、周末、发薪日）
+   - 更多工具持续添加中...
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **用户体验**：
+   - 暗黑/明亮主题切换
+   - 拖拽式倒计时组件
+   - 响应式布局适配各种设备
 
-### `npm run build`
+## 项目结构
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+.
+├── components/           # React 组件
+├── pages/               # Next.js 页面路由
+├── public/              # 静态资源
+└── styles/              # 全局样式
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 技术栈
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Next.js](https://nextjs.org/) - React 框架
+- [React](https://reactjs.org/) - UI 库
+- [Font Awesome](https://fontawesome.com/) - 图标库
+- [next-seo](https://github.com/garmeeh/next-seo) - SEO 优化
 
-### `npm run eject`
+## 开发指南
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 安装依赖
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 启动开发服务器
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run dev
+```
 
-## Learn More
+访问 http://localhost:3000 查看应用。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 构建生产版本
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
+### 启动生产服务器
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+## SEO 优化
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+本项目使用 next-seo 进行 SEO 优化，每个页面都配置了独立的：
 
-### Making a Progressive Web App
+- Title 和 Description
+- Open Graph 信息
+- Twitter Cards 信息
+- Canonical URLs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 部署
 
-### Advanced Configuration
+可以部署到以下平台：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Vercel (推荐)
+- Netlify
+- 自定义 Node.js 服务器
 
-### Deployment
+## 许可证
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
