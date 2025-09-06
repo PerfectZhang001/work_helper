@@ -56,7 +56,9 @@ const Sidebar = ({ setCurrentPage, toggleSidebar }) => {
 
   const handleToolClick = (toolId) => {
     if (toolId === 'json') {
-      window.location.href = '/JsonTool';
+      // 获取基础路径，考虑部署在子目录的情况
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+      window.location.href = `${basePath}/JsonTool`;
     }
     // 其他工具可以类似处理
     // TODO: 添加其他工具的处理逻辑

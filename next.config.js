@@ -27,6 +27,7 @@ const nextConfig = {
   // 环境变量
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES ? '/work_helper' : '',
   },
   
   // 图片优化配置

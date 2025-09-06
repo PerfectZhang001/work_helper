@@ -127,7 +127,9 @@ const JsonTool = ({ setCurrentPage: initialSetCurrentPage, sidebarVisible: initi
   const handleSetCurrentPage = (page) => {
     if (page === 'home') {
       if (typeof window !== 'undefined') {
-        window.location.href = '/';
+        // 获取基础路径，考虑部署在子目录的情况
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        window.location.href = `${basePath}/`;
       }
     }
   };
