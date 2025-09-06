@@ -3,8 +3,10 @@ const nextConfig = {
   // GitHub Pages 部署需要的配置
   output: 'export',
   distDir: 'out',
-  basePath: process.env.GITHUB_PAGES ? '/work_helper' : '',
-  assetPrefix: process.env.GITHUB_PAGES ? '/work_helper/' : '',
+  basePath: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY ? 
+    `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '',
+  assetPrefix: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY ? 
+    `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '',
   
   reactStrictMode: true,
   swcMinify: true,
@@ -27,7 +29,8 @@ const nextConfig = {
   // 环境变量
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES ? '/work_helper' : '',
+    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY ? 
+      `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '',
   },
   
   // 图片优化配置
