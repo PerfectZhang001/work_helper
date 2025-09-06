@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // GitHub Pages 部署需要的配置
+  output: 'export',
+  distDir: 'out',
+  basePath: process.env.GITHUB_PAGES ? '/work_helper' : '',
+  assetPrefix: process.env.GITHUB_PAGES ? '/work_helper/' : '',
+  
   reactStrictMode: true,
   swcMinify: true,
   // 配置页面路径

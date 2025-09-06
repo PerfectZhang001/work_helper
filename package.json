@@ -25,7 +25,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "export": "next build && next export",
+    "deploy": "next build && next export && touch out/.nojekyll && echo \"your-domain.com\" > out/CNAME"
   },
   "eslintConfig": {
     "extends": [

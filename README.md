@@ -85,6 +85,39 @@ npm start
 
 ## 部署
 
+### 部署到 GitHub Pages
+
+1. 构建静态文件：
+   ```bash
+   npm run export
+   ```
+
+2. 部署到 GitHub Pages 的两种方式：
+   
+   a. 使用 GitHub Actions (推荐)：
+      - 在 GitHub 仓库中设置 GitHub Actions 工作流
+      - 配置工作流自动构建和部署
+
+   b. 手动部署：
+      - 安装 `gh-pages` 包：
+        ```bash
+        npm install gh-pages --save-dev
+        ```
+      - 添加部署脚本到 package.json：
+        ```json
+        {
+          "scripts": {
+            "deploy": "next build && next export && touch out/.nojekyll && gh-pages -d out"
+          }
+        }
+        ```
+      - 运行部署命令：
+        ```bash
+        npm run deploy
+        ```
+
+## 其他部署平台
+
 可以部署到以下平台：
 
 - Vercel (推荐)
