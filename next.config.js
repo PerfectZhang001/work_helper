@@ -3,9 +3,11 @@ const nextConfig = {
   // GitHub Pages 部署需要的配置
   output: 'export',
   distDir: 'out',
-  basePath: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY ? 
+  // 修改 basePath 和 assetPrefix 配置逻辑
+  // 当使用自定义域名时，basePath 应该为空字符串
+  basePath: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY && !process.env.CUSTOM_DOMAIN ? 
     `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '',
-  assetPrefix: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY ? 
+  assetPrefix: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY && !process.env.CUSTOM_DOMAIN ? 
     `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '',
   
   reactStrictMode: true,
@@ -29,13 +31,14 @@ const nextConfig = {
   // 环境变量
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY ? 
+    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES && process.env.GITHUB_REPOSITORY && !process.env.CUSTOM_DOMAIN ? 
       `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '',
   },
   
   // 图片优化配置
   images: {
     domains: ['localhost'],
+    unoptimized: true, // GitHub Pages 不支持图片优化
   },
 };
 
