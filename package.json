@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "export": "next build && next export",
-    "deploy": "npm install --legacy-peer-deps && GITHUB_PAGES=true next build && next export && touch out/.nojekyll && echo \"tool.wakechance.com\" > out/CNAME"
+    "deploy": "npm install --legacy-peer-deps && GITHUB_PAGES=false next build && next export && touch out/.nojekyll && echo \"tool.wakechance.com\" > out/CNAME"
   },
   "eslintConfig": {
     "extends": [
